@@ -9,7 +9,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         Sorting sorting = new Sorting(n);
-        sorting.bubbleSort();
+        //sorting.bubbleSort();
+        sorting.selectionSort();
 
         System.out.println(Arrays.toString(sorting.array));
 

@@ -22,4 +22,21 @@ public class Sorting {
             }
         }
     }
+
+    public void selectionSort() {
+        int length = array.length;
+        for (int i = 0; i < length - 1; i++) {
+            int indMin = i;
+            for (int j = i + 1; j < length; j++) {
+                if (array[j] < array[indMin]) {
+                    indMin = j;
+                }
+            }
+            if (indMin != i) {
+                int temp = array[i];
+                array[i] = array[indMin];
+                array[indMin] = temp;
+            }
+        }
+    }
 }
