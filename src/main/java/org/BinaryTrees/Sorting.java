@@ -51,4 +51,15 @@ public class Sorting {
         }
     }
 
+    public void shellSort() {
+        int length = array.length;
+        for (int step = length/2; step > 0; step /= 2) {
+            for (int i = step; i < length; i++) {
+                for (int j = i - step; j>0 && array[j] > array[j+step]; j -= step) {
+                    swap(j, j+step);
+                }
+            }
+        }
+    }
+
 }
