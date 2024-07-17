@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Enter array size: 15");
+        System.out.println("Enter array size: 16");
         Scanner sc = new Scanner(System.in);
         //int n = sc.nextInt();
         Sorting sorting = new Sorting(16);
@@ -14,10 +14,10 @@ public class Main {
         //sorting.bubbleSort();
         //sorting.selectionSort();
         //sorting.insertionSort();
-        sorting.shellSort();
+        //sorting.shellSort();
+        sorting.heapSort();
 
         System.out.println("Sorted array: ");
         System.out.println(Arrays.toString(sorting.array));
-
     }
 }
