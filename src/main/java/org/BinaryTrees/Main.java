@@ -15,7 +15,8 @@ public class Main {
         //sorting.selectionSort();
         //sorting.insertionSort();
         //sorting.shellSort();
-        sorting.heapSort();
+        //sorting.heapSort();
+        sorting.quickSort();
 
         System.out.println("Sorted array: ");
         System.out.println(Arrays.toString(sorting.array));

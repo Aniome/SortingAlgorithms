@@ -1,7 +1,5 @@
 package org.BinaryTrees;
 
-import java.util.Arrays;
-
 public class Sorting {
     public int[] array;
     private int length;
@@ -83,6 +81,31 @@ public class Sorting {
         if (largest != i) {
             swap(i, largest);
             heapIfy(n, largest);
+        }
+    }
+
+    public void quickSort() {
+        quickSort(array, 0, length - 1);
+    }
+
+    private void quickSort(int a[], int first, int last) {
+        if (first < last) {
+            int left = first;
+            int right = last;
+            int middle = a[(left + right) / 2];
+            do {
+                while (a[left] < middle)
+                    left++;
+                while (a[right] > middle)
+                    right--;
+                if (left <= right) {
+                    swap(left, right);
+                    left++;
+                    right--;
+                }
+            } while (left <= right);
+            quickSort(a, first, right);
+            quickSort(a, left, last);
         }
     }
 }
