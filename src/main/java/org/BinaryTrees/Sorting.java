@@ -2,7 +2,7 @@ package org.BinaryTrees;
 
 public class Sorting {
     public int[] array;
-    private int length;
+    private final int length;
 
     public Sorting(int size) {
         array = new int[size];
@@ -19,7 +19,6 @@ public class Sorting {
     }
 
     public void bubbleSort() {
-        int length = array.length;
         for (int i = 0; i < length - 1; i++) {
             for (int j = 0; j < length - i - 1; j++) {
                 if (array[j] > array[j + 1]) {
@@ -85,18 +84,18 @@ public class Sorting {
     }
 
     public void quickSort() {
-        quickSort(array, 0, length - 1);
+        quickSort(0, length - 1);
     }
 
-    private void quickSort(int a[], int first, int last) {
+    private void quickSort(int first, int last) {
         if (first < last) {
             int left = first;
             int right = last;
-            int middle = a[(left + right) / 2];
+            int middle = array[(left + right) / 2];
             do {
-                while (a[left] < middle)
+                while (array[left] < middle)
                     left++;
-                while (a[right] > middle)
+                while (array[right] > middle)
                     right--;
                 if (left <= right) {
                     swap(left, right);
@@ -104,8 +103,8 @@ public class Sorting {
                     right--;
                 }
             } while (left <= right);
-            quickSort(a, first, right);
-            quickSort(a, left, last);
+            quickSort(first, right);
+            quickSort(left, last);
         }
     }
 }
